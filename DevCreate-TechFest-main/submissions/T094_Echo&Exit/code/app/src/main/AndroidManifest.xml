@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions for network access -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permissions for Location (NEWLY ADDED) -->
+    <!-- ACCESS_FINE_LOCATION grants access to precise location (e.g., GPS) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- ACCESS_COARSE_LOCATION grants access to approximate location (e.g., cell towers, Wi-Fi) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Permissions for Camera and Microphone -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Permissions for Photos, Media, and Storage -->
+    <!-- READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, and READ_MEDIA_AUDIO are for Android 13 (API 33) and above -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- For older Android versions (below API 33), use READ_EXTERNAL_STORAGE and WRITE_EXTERNAL_STORAGE -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <!-- Note: WRITE_EXTERNAL_STORAGE is deprecated for apps targeting API 29 and above -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" tools:ignore="ScopedStorage" />
+
+    <!-- Permission for Notifications (required for Android 13 and above) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Vida">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
